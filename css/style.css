@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  /*background-color: #1c071e;*/
+  background-image: url('img/space.png');
+  background-size: cover;
+}
+
+h2,
+h3 {
+  /*color: #00a2c6;*/
+  color: #d19602;
+}
+
+footer {
+  padding: 20px;
+  color: white;
+  /*background-color: #1a1d1e;*/
+  background-color: #1a1a2e;
+  text-align: center;
+  font-weight: bold;
+}
+
+nav a {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  padding-inline: 4rem;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav {
+  background-color: #1a1d1e;
+  /*background-color: #1a1a2e;*/
+  padding: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1d1e;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.profile header {
+  text-align: center;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit:fill;
+  object-position: center;
+}
+
+.profile img {
+  max-width: 200px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  /*background-color: #ffffff;*/
+  /*background-color: #00a2c6;*/
+  background-color: #151549;
+  /*background-color: #0d0d2b;*/
+  color: #f9f9f9;
+}
+
+.jumbotron {
+  background-image: url('img/hsrbanner3.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed;
+  padding: 150px;
+  text-align: center;
+  color: white;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  gap: 2rem;
+}
+
+#content {
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+}
+
+aside {
+  flex: 1;
+  color: #f9f9f9;
+}
+
+.profile.card {
+  margin-bottom: 20px; 
+}
+
+header {
+  display: inline;
+}
+
+.aeon-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.aeon-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  max-height: 250px;
+  transition: max-height 0.3s ease;
+  background-color: rgb(20, 7, 45);
+  /*border: 1px solid #ddd;*/
+  border: 1px solid #151549;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.aeon-card.show {
+  max-height: 100%; 
+}
+
+.aeon-card img {
+  width: 100%;
+  display: block;
+}
+
+.aeon-card .name {
+  font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.aeon-card .nickname {
+  font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+  color: rgb(234, 38, 38);
+}
+
+
+.aeon-card .description {
+  display: none;
+  padding: 0.5rem;
+  /*background-color: #f9f9f9;*/
+  background-color: rgb(20, 7, 45);
+  border-top: 1px solid #000000;
+}
+
+.aeon-card.show .description {
+  display: block;
+  color: #f9f9f9;
+}
+
+.aeon-card:hover img {
+  transform: scale(1.05);
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  max-height: 300px;
+  object-fit:fill;
+  border-radius: 5px;
+  animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+
+  main aside {
+    align-self: center;
+  }
+
+  .jumbotron h1 {
+    font-size: 36px;
+  }
+
+  .jumbotron p {
+    font-size: 16px;
+  }
+}
